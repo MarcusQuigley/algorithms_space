@@ -25,6 +25,24 @@ class Test_greedy_leetcode_easy(unittest.TestCase):
         expected = 1
         actual = leetcode_easy.balancedStringSplit(stringvalue)
         self.assertEqual(expected, actual)
+
+    def test_minDeletionSize(self):
+        list = ["cba","daf","ghi"]
+        expected = 1
+        actual = leetcode_easy.minDeletionSize(list)
+        self.assertEqual(expected, actual)
+
+    def test_minDeletionSize1(self):
+        list = ["a","b"]
+        expected = 0
+        actual = leetcode_easy.minDeletionSize(list)
+        self.assertEqual(expected, actual)
+
+    def test_minDeletionSize2(self):
+        list = ["zyx","wvu","tsr"]
+        expected = 3
+        actual = leetcode_easy.minDeletionSize(list)
+        self.assertEqual(expected, actual)
     
     
 

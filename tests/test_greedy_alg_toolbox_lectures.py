@@ -16,6 +16,12 @@ class Test_greedy_algorithms(unittest.TestCase):
         actual = alg_toolbox_lectures.largest_number(numbers)
         self.assertEqual(expected, actual)
 
-   
+    def test_fractional_knapsack2(self):
+        weights = [20,18,14]
+        values = [4,3,2]
+        capacity = 7
+        expected = 7
+        actual = alg_toolbox_lectures.fractional_knapsack_take2(capacity, weights, values)
+        self.assertEqual(expected, actual)
 
         

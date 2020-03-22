@@ -49,6 +49,37 @@ def fractional_knapsack(bagcapacity, weights, values):
     return result
             
 
+def fractional_knapsack_take2(bagcapacity, weights, values):
+    knapsack = []
+    n = len(weights)
+    result = 0
+
+    for i in range(n):
+        #get best value of remaining items in weights
+        #i = i
+        if result == bagcapacity:
+            return result
+        maxvalue = -1
+        maxindex = -1
+        for j in range(len(weights)):
+            if maxvalue < (weights[j] // values[j]):
+                maxvalue = (weights[j] // values[j])
+                maxindex = j
+        val = values[maxindex]
+        if (bagcapacity - result > val):
+            result += val
+        else:
+            result += val // (bagcapacity - result)
+        knapsack.append(val)
+        weights.pop(maxindex)
+        values.pop(maxindex)
+       
+    return result
+
+
+    #while knapsack < bagcapacity:
+
+
 
             
 

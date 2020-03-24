@@ -43,7 +43,15 @@ class Test_greedy_leetcode_easy(unittest.TestCase):
         expected = 3
         actual = leetcode_easy.minDeletionSize(list)
         self.assertEqual(expected, actual)
-    
-    
 
-        
+    def test_laststoneweight(self):
+        stones = [2,7,4,1,8,1]
+        expected = 1
+        actual = leetcode_easy.laststoneweight(stones)
+        self.assertEqual(expected, actual)
+    
+    def test_laststoneweight2(self):
+        stones = [2,2,1,1]
+        expected = 0
+        actual = leetcode_easy.laststoneweight(stones)
+        self.assertEqual(expected, actual)

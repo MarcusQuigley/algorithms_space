@@ -55,3 +55,20 @@ class Test_greedy_leetcode_easy(unittest.TestCase):
         expected = 0
         actual = leetcode_easy.laststoneweight(stones)
         self.assertEqual(expected, actual)
+
+    def test_issubsequence(self):
+        #expected = True
+        actual = leetcode_easy.issubsequence('ahbgdc','abc')
+        self.assertTrue(actual)
+
+    def test_issubsequence2(self):
+        actual = leetcode_easy.issubsequence('ahbgdc','acb')
+        self.assertFalse(actual)
+
+    def test_issubsequence3(self):
+        actual = leetcode_easy.issubsequence('','ahbgdc')
+        self.assertFalse(actual)
+    
+    def test_issubsequence4(self):
+        actual = leetcode_easy.issubsequence('abc','')
+        self.assertTrue(actual)

@@ -65,5 +65,22 @@ def laststoneweight(stones):
         return stones[0]
     return 0
 
+def issubsequence(parent, child): # 392
+    if len(parent) == 0 and len(child) == 0:
+        return True
+    if len(child) > len(parent):
+        return False
+    if len(child) == 0:
+        return True
+    if len(parent) == 0:
+        return False
+        
+    childindex = 0
+    for p in parent:
+        if child[childindex] == p:
+            if len(child) == childindex + 1:
+                return True
+            childindex+=1
+    return False
 
 

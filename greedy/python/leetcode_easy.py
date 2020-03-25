@@ -29,7 +29,7 @@ def minDeletionSize(list) -> int:
 
     return result
 #1046 https://leetcode.com/problems/last-stone-weight/
-def laststoneweight(stones):
+def laststoneweight1(stones):
     while len(stones) > 1:
         maxval1 = -1
         maxval2 = -1
@@ -64,6 +64,21 @@ def laststoneweight(stones):
     if len(stones)>0:
         return stones[0]
     return 0
+
+#1046 https://leetcode.com/problems/last-stone-weight/
+#cleaner
+def laststoneweight(stones):
+    while len(stones) > 1:
+        stones.sort(reverse = True)
+        diff = stones[0] - stones[1]
+        if diff == 0:
+            stones.pop(1)
+        else:
+            stones[1] = diff
+        stones.pop(0)
+    return 0 if len(stones) == 0 else stones[0]
+    
+
 
 def issubsequence(parent, child): # 392
     if len(parent) == 0 and len(child) == 0:

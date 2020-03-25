@@ -23,3 +23,23 @@ def peoplegrouper(group): # #1282 Group the People Given the Group Size They Bel
             result.append(internallist)
     return result
                 
+def brackets(s): #921 https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+    stack = []
+    lastaddeditem = ""
+    for i in range(len(s)):
+        sym = s[i]
+        isleft = True if sym == '(' else False
+        if isleft:
+            stack.append(sym)
+        else:
+            if lastaddeditem == '(':
+                stack.pop()
+                lastaddeditem = stack[(len(stack)-1)] if len(stack) > 0 else ""
+                #lastaddeditem = stack[i-1] if i > 0 else ""
+                continue
+            else:
+                stack.append(sym)
+        lastaddeditem = sym
+    return len(stack)
+
+

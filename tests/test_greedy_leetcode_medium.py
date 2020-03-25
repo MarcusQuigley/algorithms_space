@@ -19,7 +19,36 @@ class Test_greedy_leetcode_medium(unittest.TestCase):
         expected = [[0]]
         actual = leetcode_medium.peoplegrouper(group)
         self.assertEqual(expected, actual)
+
+    def test_brackets(self):
+        str = "())"
+        expected = 1
+        actual = leetcode_medium.brackets(str)
+        self.assertEqual(expected, actual)
+
+    def test_brackets1(self):
+        str = "()"
+        expected = 0
+        actual = leetcode_medium.brackets(str)
+        self.assertEqual(expected, actual)
+
+    def test_brackets2(self):
+        str = "((("
+        expected = 3
+        actual = leetcode_medium.brackets(str)
+        self.assertEqual(expected, actual)
+
+    def test_brackets3(self):
+        str = "()))(("
+        expected = 4
+        actual = leetcode_medium.brackets(str)
+        self.assertEqual(expected, actual)
     
+    def test_brackets4(self):
+        str = "((())"
+        expected = 1
+        actual = leetcode_medium.brackets(str)
+        self.assertEqual(expected, actual)
      
     
     
